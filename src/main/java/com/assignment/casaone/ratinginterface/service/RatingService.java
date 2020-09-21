@@ -15,4 +15,10 @@ public interface RatingService {
 
     public void updateRating(String ratingId);
 
+    public void deleteRating(String ratingId);
+
+    public void deleteRatingByUser(String userId);
+
+    public void deleteBulkRatings(List<String> listOfRatingIds);
+
 }
