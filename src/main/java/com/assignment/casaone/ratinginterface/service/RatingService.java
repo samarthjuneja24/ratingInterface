@@ -1,24 +1,24 @@
 package com.assignment.casaone.ratinginterface.service;
 
-import com.assignment.casaone.ratinginterface.model.RatingModel;
+import com.assignment.casaone.ratinginterface.dao.RatingsDAO;
+import com.assignment.casaone.ratinginterface.model.SaveRatingsRequest;
+import org.bson.types.ObjectId;
+import org.springframework.http.ResponseEntity;
+
 import java.util.List;
 
 public interface RatingService {
 
-    public RatingModel getRatingsByProductId(String productId);
+    public List<RatingsDAO> getRatingsByProductId(ObjectId productId);
 
-    public List<RatingModel> getRatingsByProductIds(List<String> listOfProductIds);
+    public ResponseEntity<String> saveRatings(SaveRatingsRequest saveRatingsRequest);
 
+    public ResponseEntity<String> updateRatings(RatingsDAO updateRequest);
+
+    /*
     public List<RatingModel> addBulkRatings(List<RatingModel> listOfRatings);
 
-    public void addRating(RatingModel ratingModel);
-
-    public void updateRating(String ratingId);
-
     public void deleteRating(String ratingId);
-
-    public void deleteRatingByUser(String userId);
-
-    public void deleteBulkRatings(List<String> listOfRatingIds);
+    */
 
 }
