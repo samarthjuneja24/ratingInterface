@@ -46,6 +46,12 @@ public class RatingServiceImpl implements RatingService {
         ratingsDAO.setRating(updateRequest.getRating());
         ratingsRepository.save(ratingsDAO);
 
-        return ResponseEntity.ok("Ratings updated successfully");
+        return ResponseEntity.ok("Ratings updated successfully with rating id:" + updateRequest.getId().toString());
+    }
+
+    public ResponseEntity<String> deleteRating(ObjectId ratingId){
+
+        ratingsRepository.deleteById(ratingId);
+        return ResponseEntity.ok("Rating deleted successfully with id:" + ratingId.toString());
     }
 }

@@ -15,4 +15,6 @@ public interface RatingsRepository extends MongoRepository<RatingsDAO, Long> {
     public List<RatingsDAO> findAllByProductId(ObjectId ratingId);
 
     public RatingsDAO findById(ObjectId ratingId);
+
+    public void deleteById(ObjectId ratingId);
 }

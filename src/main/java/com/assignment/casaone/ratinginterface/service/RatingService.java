@@ -15,6 +15,8 @@ public interface RatingService {
 
     public ResponseEntity<String> updateRatings(RatingsDAO updateRequest);
 
+    public ResponseEntity<String> deleteRating(ObjectId ratingId);
+
     /*
     public List<RatingModel> addBulkRatings(List<RatingModel> listOfRatings);
 

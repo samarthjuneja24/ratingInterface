@@ -30,4 +30,9 @@ public class RatingInterfaceController {
     public ResponseEntity<String> updateRating(@RequestBody RatingsDAO ratingsDAO){
         return ratingService.updateRatings(ratingsDAO);
     }
+
+    @DeleteMapping(value = "/deleteRating/{ratingId}")
+    public ResponseEntity<String> deleteRating(@PathVariable String ratingId){
+        return ratingService.deleteRating(new ObjectId(ratingId));
+    }
 }
